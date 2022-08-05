@@ -9,12 +9,10 @@ import java.util.Date;
 
 public class Program {
     public static void main(String[] args) {
-        Department obj = new Department(1, "carol");
-        System.out.println(obj);
+        SellerDao sellerDao = DaoFactory.createSellerDao();
 
-        Seller seller = new Seller(21, "Lena", "lena@gmail.com", new Date(), 300.00, obj);
+        Seller seller = sellerDao.findById(1);
         System.out.println(seller);
 
-        SellerDao sellerDao = DaoFactory.createSellerDao();
     }
 }
